@@ -4,40 +4,23 @@
     box-sizing: border-box;
 }
 
+#app {
+    height: 100vh;
+}
+
 header {
     width: 100%;
     height: 80px;
-    background-color: #fff;
-    display: flex;
     background-color: #EAEAEA;
+    display: flex; 
 }
 
 .left-bar {
-    width: 28%;
+    width: 30%;
     height: 80px;
-    border-right: 2px solid #D9D9D9;
+    border-right: 2px solid gray;
     display: flex;
     justify-content: space-between;   
-}
-
-.user, .icons {
-    min-width: 50px;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.user img {
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-    margin-left: 10px;
-}
-
-.icons {
-    font-size: 15px;
-    color: #B1B2B4;
 }
 
 .central-bar {
@@ -47,8 +30,19 @@ header {
     justify-content: space-between;
 }
 
-.open-chat {
-    padding-left: 10px;
+.user, .icons-tools {
+    min-width: 50px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user img {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    margin-left: 15px;
 }
 
 .access {
@@ -56,23 +50,26 @@ header {
     font-size: 12px;
 }
 
-.access-grey, a {
-    color: #B1B2B4;
+.user span {
+    padding-left: 10px;
 }
 
-.new-notifications{
-    width: 100%;
-    height: 70px;
-    background-color: #8EDAFC;
-    display: flex;
-    padding: 15px;
+.open-chat {
+    padding-left: 10px;
 }
 
-.icon-bell i{
-    padding: 10px 8px;
-    background-color: #fff;
-    border-radius: 100%;
-    color: #8EDAFC;
+a {
+    color: #AFAFB0;
+}
+
+.access-gray {
+    color: #AFAFB0;
+}
+
+.icons-tools i, .input-new-chat i {
+    padding-right: 15px;
+    color: darkgrey;
+    font-size: 25px;
 }
 
 main {
@@ -80,62 +77,50 @@ main {
 }
 
 nav {
-    width: 28%;
-    height: 80px;   
+    width: 30%;
+    height: calc(100vh - 80px);  
 }
 
-.notifications-new-message, a {
-    font-size: 15px;
+.new-notifications {
+    width: 100%;
+    height: 70px;
+    padding: 15px;
+    background-color: #8EDAFC;
+    display: flex;  
+}
+
+.icon-bell i {
+    padding: 10px 8px;
+    color: #8EDAFC;
+    border-radius: 20px;
+    background-color: #FFFFFF;
 }
 
 .input-new-chat {
     padding: 15px;
-    background-color: #fff;
+    background-color:#FFFFFF;
     display: flex;
-    align-items: center; 
+    align-items: center;
 }
 
 .input-new-chat input {
-    width: 298px;
-    height: 28px;
+    width: 300px;
+    height: 30px;
     margin-left: 10px;
-    border-color: 1px solid #B1B2B4;
-}
-
-.input-new-chat i {
-    padding-right: 15px;
-    color: darkgrey;
-    font-size: 25px;
+    border-color: #AFAFB0;
 }
 
 .contacts {
     width: 100%;
-    height: 80px;
+    height: calc(100% - 130px);
     overflow-y: scroll;
-    background-color: #fff;    
+    background-color: #FFFFFF; 
 }
 
 .contact {
+    padding: 15px;
     display: flex;
     align-items: center;
-    padding: 15px;
-}
-
-.contact img{
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 100%;
-    margin-right: 10px;
-}
-
-.last-access {
-    font-size: 10px;
-    color: #B1B2B4;
-}
-
-.text-last-message {
-    font-size: 10px;
 }
 
 .contact-flex {
@@ -143,5 +128,64 @@ nav {
     justify-content: space-between;
 }
 
+.contact img {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    margin-right: 10px;
+    object-fit: cover;
+}
 
+.last_access {
+    font-size: 12px;
+}
 
+#main-chat {
+    width: 70%;
+    height: calc(100vh - 80px);
+}
+
+.container-chat {
+    width: 100%;
+    height: calc(100vh - 160px);
+    overflow-y: scroll;
+    font-size: 20px;
+    background-image:url("../img/mine.jpg");
+    object-fit: contain;
+}
+
+.chat {
+    width: 700px;
+    min-height: 70px;
+    margin: 50px auto;
+    color: #FFFFFF; 
+    position: relative;   
+}
+
+.date {
+    font-size: 10px;
+    padding-top: 8px;
+}
+
+#new-message {
+    width: 100%;
+    height: 80px;
+    background-color: #FFFFFF;
+    padding: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#new-message input {
+    width: 900px;
+    height: 40px;
+    margin: 0 10px;
+    border-radius: 5px;
+    border-color: #AFAFB0;
+}
+
+#new-message i {
+    color: #6B7376;
+    font-size: 25px;
+}

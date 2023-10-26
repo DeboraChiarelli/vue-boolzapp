@@ -9,14 +9,14 @@
 </head>
 <body>
     <div id="app">
-        <!-- section: left-bar -->
         <header>
+            <!-- section: left-bar -->
             <div class="left-bar">
                 <div class="user">
                     <img src="./img/avatar_io.jpg" alt="user">
                     <span>Sofia</span>
                 </div>
-                <div class="icons">
+                <div class="icons-tools">
                     <i class="fa-solid fa-spinner"></i>
                     <i class="fa-solid fa-message"></i>
                     <i class="fa-solid fa-ellipsis-vertical menu_left_bar"></i>
@@ -24,58 +24,74 @@
             </div>
             <!-- section: central-bar -->
             <div class="central-bar">
-                <div class="user">
-                <img src="./img/avatar_1.jpg" alt="user">
-                <div>
-                    <div class="open-chat">
-                        <span>Michele</span>
-                    </div>
-                    <div class="access">
-                         <p class="access-grey">Ultimo accesso oggi alle 12:00</p>
-                    </div>  
+                    <div class="user">
+                    <img src="./img/avatar_1.jpg" alt="user">
+                    <div>
+                        <div class="open-chat">
+                            <span>Michele</span>
+                        </div>
+                        <div class="access">
+                            <p class="access-gray">Ultimo accesso oggi alle 12:00</p>
+                        </div>  
+                    </div>   
+                </div>
+                <div class="icons-tools">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="fa-solid fa-paperclip"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
                 </div>  
             </div>
-            <div class="icons">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <i class="fa-solid fa-paperclip"></i>
-                <i class="fa-solid fa-ellipsis-vertical"></i>
-            </div>  
-        </div>
         </header>
         <main>
-            <!-- section: left-bar / new-notifications -->
+            <!-- section: left-bar / notifications -->
             <nav>
             <div class="new-notifications">
-                    <div class="icon-bell">
-                        <i class="fa-solid fa-bell-slash"></i>
-                    </div>
-                    <div class="open-chat">
-                        <div class="notifications-new-message">Ricevi notifiche di nuovi messaggi</div>
-                        <a href="#">Attiva notifiche Desktop</a>
-                    </div>
+                <div class="icon-bell">
+                    <i class="fa-solid fa-bell-slash"></i>
+                </div>
+                <div class="open-chat">
+                    <div class="new-message-notification">Ricevi notifiche di nuovi messaggi</div>
+                    <a href="#">Attiva notifiche Desktop</a>
+                </div>
             </div>
-            <!--section: left-bar / input-new-chat -->
+            <!-- section: left-bar / input new-message -->
             <div class="input-new-chat">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <input type="text" placeholder="Cerca o inizia una nuova chat">
             </div>
-            <!-- section: left-bar / contacts-->
+            <!-- section: left-bar / contacts -->
             <div class="contacts">
-                <div class="contact">
-                    <img src="./img/avatar_1.jpg" alt="">
-                    <div class="contact-flex">
+                <div class="contact" v-for ="(dataUser, index) in contacts"  @click="changeContact(index)">
+                    <img :src="dataUser.avatar" alt="">
                         <div>
-                            <span>Michele</span>
-                            <p class="access-grey text-last-message" >Ultimo messaggio inviato</p>
+                            <div>
+                                {{dataUser.name}}
+                            </div>
+                            <div class="last-access">
+                                {{contacts[activElement].messages[contacts[activElement].messages.length - 1].date}} 
+                            </div>  
                         </div>
-                        <div class="last-access">
-                            <span>12:00</span> 
-                        </div>  
+                    </div>  
+                </div>
+            </nav>
+            <!-- section: main-chat -->
+            <div id="main-chat">
+                <div class="container-chat">
+                    <div class="chat">  
+                        <div :class ="message-status">   <!-- div vuoti che andranno riempiti con Vue -->
+                            <div class="date"></div>
+                        </div>   
                     </div>
                 </div>
+                <!-- section: main-chat / new-message -->
+                <div id="new-message">
+                    <i class="fa-regular fa-face-smile"></i>
+                    <input type="text" placeholder="Scrivi un messaggio">
+                    <i class="fa-solid fa-microphone"></i>
+                </div>
             </div>
-            </nav>
         </main>
+    </div>    
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./js/app.js"></script>
 </body>
