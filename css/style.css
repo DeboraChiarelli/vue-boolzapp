@@ -56,9 +56,38 @@ header {
     font-size: 12px;
 }
 
-.access-grey {
+.access-grey, a {
     color: #B1B2B4;
 }
+
+.new-notifications{
+    width: 100%;
+    height: 70px;
+    background-color: #8EDAFC;
+    display: flex;
+    padding: 15px;
+}
+
+.icon-bell i{
+    padding: 10px 8px;
+    background-color: #fff;
+    border-radius: 100%;
+    color: #8EDAFC;
+}
+
+main {
+    display: flex;
+}
+
+nav {
+    width: 28%;
+    height: 80px;   
+}
+
+.notifications-new-message, a {
+    font-size: 15px;
+}
+
 
 
 

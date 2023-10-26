@@ -9,6 +9,7 @@
 </head>
 <body>
     <div id="app">
+        <!-- section: left-bar -->
         <header>
             <div class="left-bar">
                 <div class="user">
@@ -21,6 +22,7 @@
                     <i class="fa-solid fa-ellipsis-vertical menu_left_bar"></i>
                 </div>
             </div>
+            <!-- section: central-bar -->
             <div class="central-bar">
                 <div class="user">
                 <img src="./img/avatar_1.jpg" alt="user">
@@ -40,7 +42,20 @@
             </div>  
         </div>
         </header>
-
+        <main>
+            <!-- section: new-notifications -->
+            <nav>
+            <div class="new-notifications">
+                    <div class="icon-bell">
+                        <i class="fa-solid fa-bell-slash"></i>
+                    </div>
+                    <div class="open-chat">
+                        <div class="notifications-new-message">Ricevi notifiche di nuovi messaggi</div>
+                        <a href="#">Attiva notifiche Desktop</a>
+                    </div>
+            </div>
+            </nav>
+        </main>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./js/app.js"></script>
 </body>
