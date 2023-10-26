@@ -12,7 +12,7 @@ header {
     background-color: #EAEAEA;
 }
 
-.aside {
+.left-bar {
     width: 28%;
     height: 80px;
     border-right: 2px solid #D9D9D9;
@@ -39,5 +39,27 @@ header {
     font-size: 15px;
     color: #B1B2B4;
 }
+
+.central-bar {
+    width: 70%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.open-chat {
+    padding-left: 10px;
+}
+
+.access {
+    padding: 2px 10px;
+    font-size: 12px;
+}
+
+.access-grey {
+    color: #B1B2B4;
+}
+
+
 
 
