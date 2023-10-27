@@ -77,9 +77,10 @@
             <!-- section: main-chat -->
             <div id="main-chat">
                 <div class="container-chat">
-                    <div class="chat">  
-                        <div class ="message-status" v-for="message in contacts[activElement].messages">   <!-- div vuoti che andranno riempiti con Vue -->
-                            <div class="date"></div>
+                    <div class="chat" v-for="message in contacts[activElement].messages">  
+                        <div :class ="message.status === 'sent' ? 'sent' : 'recived'" >
+                            {{message.message}}  
+                            <div class="date">{{message.date}}</div>
                         </div>   
                     </div>
                 </div>
