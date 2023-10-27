@@ -4,7 +4,7 @@ createApp({
     data() {
         return {
             activElement: 0,
-
+            newMessage: "",
             contacts: [
                 {
                     name: 'Michele',
@@ -173,6 +173,25 @@ createApp({
     methods: {
          changeContact(index){
             this.activElement = index;
-        }
-    }   
+        },
+        
+        inputNewMessage(){
+            if (this.newMessage == "") return
+            let answer = {
+                message: this.newMessage,
+                status: 'sent'
+            }
+           
+            this.contacts[this.activElement].messages.push(answer);
+            this.newMessage = "";
+
+            const botAnswer = {
+                message: "Ciao",
+                status: "received"
+            }
+            this.contacts[this.activElement].messages.push(botAnswer);
+            
+        },
+
+    }
 }).mount("#app")

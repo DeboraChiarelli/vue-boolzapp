@@ -78,7 +78,7 @@
             <div id="main-chat">
                 <div class="container-chat">
                     <div class="chat" v-for="message in contacts[activElement].messages">  
-                        <div :class ="message.status === 'sent' ? 'sent' : 'recived'" >
+                        <div :class ="message.status === 'sent' ? 'sent' : 'received'" >
                             {{message.message}}  
                             <div class="date">{{message.date}}</div>
                         </div>   
@@ -87,8 +87,8 @@
                 <!-- section: main-chat / new-message -->
                 <div id="new-message">
                     <i class="fa-regular fa-face-smile"></i>
-                    <input type="text" placeholder="Scrivi un messaggio">
-                    <i class="fa-solid fa-microphone"></i>
+                    <input v-model="newMessage" @keyup.enter="inputNewMessage" type="text" placeholder="Scrivi un messaggio">
+                    <i @click="inputNewMessage" class="fa-solid fa-microphone"></i>
                 </div>
             </div>
         </main>
