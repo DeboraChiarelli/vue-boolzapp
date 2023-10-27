@@ -4,6 +4,7 @@ createApp({
     data() {
         return {
             activElement: 0,
+
             contacts: [
                 {
                     name: 'Michele',
