@@ -25,10 +25,10 @@
             <!-- section: central-bar -->
             <div class="central-bar">
                     <div class="user">
-                    <img src="./img/avatar_1.jpg" alt="user">
+                    <img :src="contacts[activElement].avatar" alt="user">
                     <div>
                         <div class="open-chat">
-                            <span>Michele</span>
+                            <span>{{contacts[activElement].name}}</span>
                         </div>
                         <div class="access">
                             <p class="access-gray">Ultimo accesso oggi alle 12:00</p>
@@ -57,18 +57,18 @@
             <!-- section: left-bar / input new-message -->
             <div class="input-new-chat">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" placeholder="Cerca o inizia una nuova chat">
+                <input type="text" v-model="search" placeholder="Cerca o inizia una nuova chat">
             </div>
             <!-- section: left-bar / contacts -->
             <div class="contacts">
-                <div class="contact" v-for ="(dataUser, index) in contacts"  @click="changeContact(index)">
+                <div class="contact" v-for ="(dataUser, index) in filteredContacts" @click="changeContact(index)">
                     <img :src="dataUser.avatar" alt="">
                         <div>
                             <div>
                                 {{dataUser.name}}
                             </div>
                             <div class="last-access">
-                                {{contacts[activElement].messages[contacts[activElement].messages.length - 1].date}} 
+                                {{dataUser.messages[dataUser.messages.length - 1].date}} 
                             </div>  
                         </div>
                     </div>  

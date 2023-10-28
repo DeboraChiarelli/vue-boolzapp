@@ -5,6 +5,7 @@ createApp({
         return {
             activElement: 0,
             newMessage: "",
+            search: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -191,10 +192,18 @@ createApp({
                     message: "Ciao",
                     status: "received"
                 }
-                
+
                 this.contacts[this.activElement].messages.push(botAnswer);
             }, 1000);
         },
-
+    },
+    computed: {
+        filteredContacts() {
+            return this.contacts.filter(
+                element => {
+                    return element.name.toLocaleLowerCase().includes(this.search.toLowerCase());
+                }
+            );
+        }
     }
 }).mount("#app")
