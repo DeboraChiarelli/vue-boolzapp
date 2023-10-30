@@ -83,10 +83,10 @@
                     <div class="chat" v-for="message in contacts[activElement].messages">  
                         <div :class ="message.status === 'sent' ? 'sent' : 'received'" >
                             {{message.message}}  
+                            <div class="dropdown" :class="(index == currentMessage ? 'dropdown-active' : null)">
+                                <i class="fas fa-trash" @click="deleteMessage(activElement, currentMessage)"></i>
+                            </div>
                             <div class="date">{{message.date}}</div>
-                        </div>
-                        <div class="dropdown" :class="(index == currentMessage ? 'dropdown-active' : null)">
-                            <i class="fas fa-trash" @click="deleteMessage(activElement, currentMessage)"></i>
                         </div>
                     </div>
                 </div>
