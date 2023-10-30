@@ -5,6 +5,7 @@ createApp({
         return {
             activElement: 0,
             newMessage: "",
+            currentMessage: null,
             search: '',
             contacts: [
                 {
@@ -179,6 +180,7 @@ createApp({
         inputNewMessage() {
             if (this.newMessage == "") return
             let answer = {
+                date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                 message: this.newMessage,
                 status: 'sent'
             }
@@ -189,6 +191,7 @@ createApp({
             myTimeout = setTimeout(() => {
 
                 const botAnswer = {
+                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                     message: "Ciao",
                     status: "received"
                 }
@@ -196,6 +199,11 @@ createApp({
                 this.contacts[this.activElement].messages.push(botAnswer);
             }, 1000);
         },
+    
+        deleteMessage: function(trash, messageTrash) {
+            this.filteredContacts[trash].messages.splice(messageTrash, 1);
+        },
+    
     },
     computed: {
         filteredContacts() {

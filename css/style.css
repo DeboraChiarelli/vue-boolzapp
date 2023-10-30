@@ -209,3 +209,18 @@ nav {
     position: absolute;
     left: 0;
 }
+
+.dropdown {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    top: 10px;
+    right: 0;
+    transform: translateX(-50%);
+    color: #6B7376;
+    cursor: pointer;
+}
+
+.dropdown-active {
+    display: block;
+}
